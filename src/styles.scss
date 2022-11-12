@@ -38,5 +38,14 @@ html, body {
 }
 
 body {
-  margin: 0;
+  margin: 2rem;
+}
+
+.button:hover{
+  border: solid 1px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.button{
+  border: solid transparent 1px;
 }
