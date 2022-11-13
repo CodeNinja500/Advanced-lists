@@ -34,6 +34,10 @@
       "list": "<mat-list role=\"list\">$content$</mat-list>",
       "item": "<mat-list-item role=\"listitem\" *ngFor=\"let $itemVariable$ of $listVariable$\">{{$itemVariable$}}</mat-list-item>"
     },
+    "table": {
+      "list": "<table *ngIf=\"$listVariable$ | async as list\">$content$</table>",
+      "item": "<tr *ngFor=\"let item of list\">\n<td>$content$</td>\n</tr>\n"
+    },
     "selection-list": {
       "list": "<mat-selection-list role=\"list\">$content$</mat-selection-list>",
       "item": "<mat-list-option role=\"listitem\" *ngFor=\"let $itemVariable$ of $listVariable$\">{{$itemVariable$}}</mat-list-option>"
@@ -78,6 +82,10 @@
     },
     "text": {
       "container": "<ng-container *ngIf=\"$detailVariable$ | async as $itemVariable$\">$content$</ng-container>",
+      "content": "{{ $itemVariable$ }}"
+    },
+    "table-cell": {
+      "container": "<td>$content$</td>",
       "content": "{{ $itemVariable$ }}"
     }
   }
