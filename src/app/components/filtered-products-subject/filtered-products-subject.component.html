@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-title>Categories</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list" fxLayout="row">
+      <mat-list-item class="button" role="listitem" *ngFor="let item of categories$ | async" (click)="selectCategory(item)">
+        {{item}}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-title>Products</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list" *ngIf="products$ | async as products else empty">
+      <mat-list-item role="listitem" *ngFor="let item of products">{{item.title}} {{item.price}}</mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #empty>
+  Please select a category first
+</ng-template>
