@@ -49,7 +49,7 @@ export class EmployeeListComponent {
       if (a.employee_salary > b.employee_salary) return order === 'asc' ? 1 : -1;
       if (a.employee_salary < b.employee_salary) return order === 'asc' ? -1 : 1;
       return 0;
-    }).filter(employees => employees.employee_age >= range.low && employees.employee_age <= range.high);
+    }).filter(employees => (employees.employee_age >= range.low && employees.employee_age <= range.high));
   }));
 
 
